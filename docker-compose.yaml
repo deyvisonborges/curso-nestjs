@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: container-curso-nestjs
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: local
+      POSTGRES_PASSWORD: local
+      POSTGRES_DB: curso-nestjs-db
+    volumes:
+      - postgres-db:/data/postgres
+    ports:
+      - "5433:5432"
+
+volumes:
+  postgres-db:
+    driver: local
