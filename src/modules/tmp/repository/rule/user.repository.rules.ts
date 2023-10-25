@@ -8,5 +8,5 @@ export abstract class UserRepositoryRules {
   abstract findByUsernameOrEmail(
     data: UsernameAndEmail,
   ): Promise<UserCreatedDto> | null;
-  abstract save(data: CreateUserDto): Users;
+  abstract save(data: CreateUserDto): Promise<Users | null>;
 }

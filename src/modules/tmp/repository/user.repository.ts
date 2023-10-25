@@ -5,17 +5,17 @@ import {
   CreateUserDto,
 } from '../dto/user.dto';
 import { UserRepositoryRules } from './rule/user.repository.rules';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class UserRepository implements UserRepositoryRules {
   constructor(private prisma: PrismaService) {}
 
-  findByUsernameOrEmail(data: UsernameAndEmail): Promise<UserCreatedDto> {
-      return await this.prisma.
-
-    throw new Error('Method not implemented.');
+  async findByUsernameOrEmail(data: UsernameAndEmail): Promise<UserCreatedDto> {
+    return null;
   }
 
-  save(data: CreateUserDto): UserCreatedDto {
-    throw new Error('Method not implemented.');
+  async save(data: CreateUserDto): Promise<UserCreatedDto | null> {
+    return null;
   }
 }
